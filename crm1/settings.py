@@ -78,7 +78,11 @@ WSGI_APPLICATION = 'crm1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'dba_projekt',
+        'USER' : 'postgres',
+        'PASSWORD' : 'haslo',
+        'HOST' : 'localhost',
+        'PORT' : '5432',
     }
 }
 
