@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 70%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+        </head>     
+<title>strona z tabelka</title>
+</head>
+<body>
+    <table>
+        <tr>
+          <th>id     </th>
+          <th>imie     </th>
+          <th>nazwisko     </th>
+          <th>data urodzenia     </th>
+          <th>login     </th>
+          <th>haslo     </th>
+          <th>id roli     </th>
+          <th>id deleted     </th>
+        </tr>
+        {% for i in users %}
+                <tr>
+                    <th>{{i.id}}</th>
+                    <th>{{i.name}}</th>
+                    <th>{{i.surname}}</th>
+                    <th>{{i.dateOfBirth}}</th>
+                    <th>{{i.login}}</th>
+                    <th>{{i.passwordMd5}}</th>
+                    <th>{{i.id_roli}}</th>
+                    <th>{{i.isDeleted}}</th>
+                </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
