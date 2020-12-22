@@ -1,7 +1,8 @@
 Projekt stworzony w oparciu o:
 -https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO (główne źródło informacji)
 
-
+Formy:
+https://tutorial.djangogirls.org/pl/django_forms/
 
 Modele:
 -https://github.com/pshrmn/notes/blob/master/django/models.md
