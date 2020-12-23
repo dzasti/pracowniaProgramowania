@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 
 from .models import *
-from .forms import UserForm
+from .forms import UserForm, PointerForm
 
 # Create your views here.
 
@@ -15,6 +15,17 @@ def proba(request):
 
 def error(request):
 	return render(request, 'accounts/error.html')
+
+def delete(request,pk):
+	order = Users.objects.get(id=pk)
+	form = PointerForm(instance = order)
+	if request.method == 'POST':
+		form = PointerForm(request.POST, instance = order)
+		if form.is_valid():
+			order.isDeleted = True
+			form.save()
+			return redirect('/proba')
+	return render(request, 'accounts/delete.html', {'form': form})
 
 def updateAdd(request):
 	form = UserForm

@@ -16,3 +16,8 @@ class UserForm(ModelForm):
             'passwordMd5' : forms.TextInput(attrs = {'class' : 'form-control'}),
             'isDeleted' : forms.TextInput(attrs = {'class' : 'form-control'}),
         }
+    
+class PointerForm(ModelForm):
+    class Meta:
+        model = Users
+        fields = ['isDeleted']

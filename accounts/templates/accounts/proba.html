@@ -1,4 +1,5 @@
 {% load static %}
+{% load poll_extras %}
 
 <!DOCTYPE html>
 <html>
@@ -145,14 +146,18 @@ a.button {
             <div class="col col-5" data-label="Date of Birth">{{i.dateOfBirth}}</div>
             <div class="col col-6" data-label="Login">{{i.login}}</div>
             <div class="col col-7" data-label="Password">{{i.passwordMd5}}</div>
-            <div class="col col-8" data-label="IsDeleted"><input type="checkbox" value="{{ i.isDeleted }}" onchange="myFunction(this.value)"></div>
-            <div class="col col-9" data-label=""><a class="button" href="{% url 'gogo2' i.id %}">update</a></div>
             <script>
               function myFunction(val) {
-                window.location.href='http://localhost:8000/proba/'
-                val = true
+              
+                var card = 
+                  window.location.href='http://localhost:8000/proba/'
+
+                }
+                this.val = False;
               }
               </script>
+            <div class="col col-8" data-label="IsDeleted"><input type="checkbox" value="{% url 'gogo3' i.id %}" onchange="window.location.href=this.value"></div>
+            <div class="col col-9" data-label=""><a class="button" href="{% url 'gogo2' i.id %}">update</a></div>
             {% endfor %}
           </li>
         </ul>
